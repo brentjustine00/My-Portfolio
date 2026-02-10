@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background-color: #14171c;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.dot-grid {
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(rgba(185, 124, 255, 0.15) 1px, transparent 1px);
+  background-size: 36px 36px, 120px 120px;
+  background-position: 0 0, 40px 40px;
+}
+
+.section-wrap {
+  @apply relative mx-auto w-full max-w-6xl px-6 py-20;
+}
+
+.section-card {
+  @apply rounded-2xl border border-base-600 bg-base-800/80 shadow-card backdrop-blur;
+}
+
+.tag {
+  @apply rounded-full border border-base-600 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white/80;
+}
+
+.subtle-border {
+  background: linear-gradient(90deg, rgba(185, 124, 255, 0.5), rgba(255, 255, 255, 0));
+  height: 1px;
+}
+
+.reveal {
+  @apply translate-y-6 opacity-0 transition-all duration-700 ease-out;
+}
+
+.reveal.is-visible {
+  @apply translate-y-0 opacity-100;
+}
