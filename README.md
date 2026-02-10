@@ -9,8 +9,3 @@ npm install
 npm run dev
 ```
 
-## Notes
-
-- Update social links and email in `src/components/Contact.tsx`.
-- Replace project entries in `src/data/projects.ts` with your real projects.
-```
