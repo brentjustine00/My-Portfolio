@@ -8,26 +8,26 @@ export default function Projects() {
   const [activeImage, setActiveImage] = useState<{ src: string; alt: string } | null>(null)
 
   return (
-    <section id="projects" className="section-wrap">
+    <section id="projects" className="section-wrap py-12 md:py-20">
       <div ref={ref} className={`reveal ${isVisible ? 'is-visible' : ''}`}>
         <div className="mb-8 flex flex-wrap items-center justify-between gap-6">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-400">Projects</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold">Selected work</h2>
+            <h2 className="mt-3 font-display text-2xl font-semibold md:text-3xl">Selected work</h2>
           </div>
           <p className="max-w-sm text-sm text-white/60">
             A snapshot of projects that show my ability to build full-stack solutions and polished user
             interfaces.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
           {projects.map((project) => {
             const [primary, ...secondary] = project.images
 
             return (
-              <article key={project.title} className="section-card flex h-full flex-col gap-6 p-8">
-                <div className="space-y-4">
-                  <h3 className="font-display text-xl font-semibold">{project.title}</h3>
+              <article key={project.title} className="section-card flex h-full flex-col gap-5 p-5 md:gap-6 md:p-8">
+                <div className="space-y-3 md:space-y-4">
+                  <h3 className="font-display text-lg font-semibold md:text-xl">{project.title}</h3>
                   <p className="text-sm text-white/70">{project.description}</p>
                 </div>
                 {primary ? (
@@ -41,7 +41,7 @@ export default function Projects() {
                       <img
                         src={primary.src}
                         alt={primary.alt}
-                        className="h-48 w-full rounded-xl border border-base-600 object-cover transition group-hover:opacity-90"
+                        className="h-44 w-full rounded-xl border border-base-600 object-cover transition group-hover:opacity-90 md:h-48"
                         loading="lazy"
                       />
                       <span className="pointer-events-none absolute inset-0 rounded-xl border border-accent-400/40 opacity-0 transition group-hover:opacity-100" />
@@ -87,7 +87,7 @@ export default function Projects() {
       <AnimatePresence>
         {activeImage ? (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 md:p-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -109,7 +109,7 @@ export default function Projects() {
               <button
                 type="button"
                 onClick={() => setActiveImage(null)}
-                className="absolute right-4 top-4 rounded-full border border-white/30 bg-base-900/80 px-3 py-2 text-xs uppercase tracking-[0.3em] text-white/80 transition hover:border-accent-400 hover:text-accent-300"
+                className="absolute right-3 top-3 rounded-full border border-white/30 bg-base-900/80 px-3 py-2 text-xs uppercase tracking-[0.3em] text-white/80 transition hover:border-accent-400 hover:text-accent-300 md:right-4 md:top-4"
               >
                 Close
               </button>

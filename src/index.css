@@ -25,7 +25,7 @@ html {
 }
 
 .section-wrap {
-  @apply relative mx-auto w-full max-w-6xl px-6 py-20;
+  @apply relative mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 md:py-20;
 }
 
 .section-card {
