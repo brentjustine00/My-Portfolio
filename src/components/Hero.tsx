@@ -82,7 +82,7 @@ export default function Hero() {
                 Currently building a hands-free gesture website powered by computer vision and TensorFlow.js.
               </p>
               <div className="subtle-border" />
-              <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em]">
+              <div className="flex flex-col items-start gap-1 text-xs uppercase tracking-[0.2em] sm:flex-row sm:items-center sm:justify-between">
                 <span className="text-white/50">Currently</span>
                 <span className="text-accent-300">Hands-Free Gesture Website</span>
               </div>
@@ -94,5 +94,6 @@ export default function Hero() {
     </section>
   )
 }
+
 
 
