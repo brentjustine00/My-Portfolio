@@ -79,7 +79,7 @@ export default function Hero() {
             </div>
             <div className="mt-6 space-y-4 text-sm text-white/70">
               <p>
-                Currently building a Hands-Free gesture website, powered with computer vision or tensorflow.js
+                Currently building a hands-free gesture website powered by computer vision and TensorFlow.js.
               </p>
               <div className="subtle-border" />
               <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em]">
@@ -94,4 +94,5 @@ export default function Hero() {
     </section>
   )
 }
+
 
