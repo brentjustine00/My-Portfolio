@@ -79,13 +79,12 @@ export default function Hero() {
             </div>
             <div className="mt-6 space-y-4 text-sm text-white/70">
               <p>
-                Currently building a Developer Path AI integrated polished website, responsive interfaces with
-                accessible components and thoughtful micro-interactions.
+                Currently building a Hands-Free gesture website, powered with computer vision or tensorflow.js
               </p>
               <div className="subtle-border" />
               <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em]">
                 <span className="text-white/50">Currently</span>
-                <span className="text-accent-300">Working on Hands-Free Gesture Website</span>
+                <span className="text-accent-300">Hands-Free Gesture Website</span>
               </div>
             </div>
           </div>
