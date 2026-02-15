@@ -3,10 +3,68 @@ export type Project = {
   description: string
   skills: string[]
   images: { src: string; alt: string }[]
-  link: string
+  link?: string
 }
 
 export const projects: Project[] = [
+  {
+    title: 'DevPath',
+    description:
+      'A development pathway platform focused on guided, project-based learning with role-based tracks, progress monitoring, and practical milestones for aspiring developers.',
+    skills: ['React', 'TypeScript', 'FastAPI', 'Supabase'],
+    images: [
+      {
+        src: '/projects/devpath.png',
+        alt: 'DevPath main dashboard',
+      },
+      {
+        src: '/projects/devpath1.png',
+        alt: 'DevPath feature screen 1',
+      },
+      {
+        src: '/projects/devpath2.png',
+        alt: 'DevPath feature screen 2',
+      },
+      {
+        src: '/projects/devpath3.png',
+        alt: 'DevPath feature screen 3',
+      },
+      {
+        src: '/projects/devpath4.png',
+        alt: 'DevPath feature screen 4',
+      },
+    ],
+    link: 'https://github.com/brentjustine00/DevPath',
+  },
+  {
+    title: 'NPE Reviewer',
+    description:
+      'A reviewer system designed to help students prepare through structured question sets, topic-based drills, and performance feedback for continuous improvement.',
+    skills: ['React', 'Python', 'Assessment Workflow', 'Analytics'],
+    images: [
+      {
+        src: '/projects/np1.jpg',
+        alt: 'NPE Reviewer main screen',
+      },
+      {
+        src: '/projects/np2.jpg',
+        alt: 'NPE Reviewer screen 2',
+      },
+      {
+        src: '/projects/np3.jpg',
+        alt: 'NPE Reviewer screen 3',
+      },
+      {
+        src: '/projects/np4.jpg',
+        alt: 'NPE Reviewer screen 4',
+      },
+      {
+        src: '/projects/np5.jpg',
+        alt: 'NPE Reviewer screen 5',
+      },
+    ],
+    link: 'https://github.com/brentjustine00/NPEReviewer',
+  },
   {
     title: 'Eye Health Detection',
     description:
@@ -18,7 +76,6 @@ export const projects: Project[] = [
         alt: 'Eye Health Detection mobile app prediction screen',
       },
     ],
-    link: 'https://github.com/',
   },
   {
     title: 'Student Portfolio & AI-Powered Learning Platform',
@@ -39,7 +96,7 @@ export const projects: Project[] = [
         alt: 'Login page for the student portfolio platform',
       },
     ],
-    link: 'https://github.com/',
+    link: 'https://github.com/brentjustine00',
   },
   {
     title: 'Web Python Simulation',
@@ -56,6 +113,5 @@ export const projects: Project[] = [
         alt: 'Simulation controls and metrics view',
       },
     ],
-    link: 'https://github.com/',
   },
 ]

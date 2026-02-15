@@ -85,7 +85,7 @@ export default function Hero() {
               <div className="subtle-border" />
               <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em]">
                 <span className="text-white/50">Currently</span>
-                <span className="text-accent-300">Working on DevPath</span>
+                <span className="text-accent-300">Working on Hands-Free Gesture Website</span>
               </div>
             </div>
           </div>
@@ -95,3 +95,4 @@ export default function Hero() {
     </section>
   )
 }
+

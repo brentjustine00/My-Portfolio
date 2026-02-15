@@ -3,9 +3,18 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { projects } from '../data/projects'
 import { useInView } from '../hooks/useInView'
 
+const IMAGE_CACHE_VERSION = '20260215'
+
+function withVersion(src: string) {
+  return src.includes('?') ? src : `${src}?v=${IMAGE_CACHE_VERSION}`
+}
+
 export default function Projects() {
   const { ref, isVisible } = useInView<HTMLDivElement>()
   const [activeImage, setActiveImage] = useState<{ src: string; alt: string } | null>(null)
+  const [showAll, setShowAll] = useState(false)
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 3)
 
   return (
     <section id="projects" className="section-wrap py-12 md:py-20">
@@ -20,8 +29,9 @@ export default function Projects() {
             interfaces.
           </p>
         </div>
+
         <div className="grid gap-4 md:grid-cols-2 md:gap-6">
-          {projects.map((project) => {
+          {visibleProjects.map((project) => {
             const [primary, ...secondary] = project.images
 
             return (
@@ -30,6 +40,7 @@ export default function Projects() {
                   <h3 className="font-display text-lg font-semibold md:text-xl">{project.title}</h3>
                   <p className="text-sm text-white/70">{project.description}</p>
                 </div>
+
                 {primary ? (
                   <div className="space-y-3">
                     <button
@@ -39,7 +50,7 @@ export default function Projects() {
                       aria-label="Open project image"
                     >
                       <img
-                        src={primary.src}
+                        src={withVersion(primary.src)}
                         alt={primary.alt}
                         className="h-44 w-full rounded-xl border border-base-600 object-cover transition group-hover:opacity-90 md:h-48"
                         loading="lazy"
@@ -57,7 +68,7 @@ export default function Projects() {
                             aria-label="Open project image"
                           >
                             <img
-                              src={image.src}
+                              src={withVersion(image.src)}
                               alt={image.alt}
                               className="h-24 w-full rounded-lg border border-base-600 object-cover transition group-hover:opacity-90"
                               loading="lazy"
@@ -69,6 +80,7 @@ export default function Projects() {
                     ) : null}
                   </div>
                 ) : null}
+
                 <div className="flex flex-wrap gap-2">
                   {project.skills.map((skill) => (
                     <span
@@ -79,11 +91,35 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
+
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex w-fit rounded-full border border-accent-400/60 px-4 py-2 text-xs uppercase tracking-[0.2em] text-accent-300 transition hover:bg-accent-500 hover:text-base-900"
+                  >
+                    GitHub Repo
+                  </a>
+                ) : null}
               </article>
             )
           })}
         </div>
+
+        {projects.length > 3 ? (
+          <div className="mt-8 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAll((prev) => !prev)}
+              className="rounded-full border border-base-600 px-5 py-2 text-xs uppercase tracking-[0.25em] text-white/70 transition hover:border-accent-400 hover:text-accent-300"
+            >
+              {showAll ? 'Show Less' : 'Show All Projects'}
+            </button>
+          </div>
+        ) : null}
       </div>
+
       <AnimatePresence>
         {activeImage ? (
           <motion.div
@@ -102,7 +138,7 @@ export default function Projects() {
               onClick={(event) => event.stopPropagation()}
             >
               <img
-                src={activeImage.src}
+                src={withVersion(activeImage.src)}
                 alt={activeImage.alt}
                 className="max-h-[90vh] w-full rounded-2xl border border-base-600 object-contain bg-base-900"
               />
