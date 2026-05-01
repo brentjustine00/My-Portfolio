@@ -69,7 +69,9 @@ export default function SignalOverlay({ onClose, onResume }: Props) {
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               <a
-                href="mailto:brentjustine00@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=brentjustine00@gmail.com"
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-full bg-cyan-300/90 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-cyan-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60"
               >
                 Transmit Email
