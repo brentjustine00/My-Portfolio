@@ -8,6 +8,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'SPYNEX',
+    description:
+      'A modern e-commerce concept featuring a clean hero landing, product browsing, and a streamlined checkout flow. Built to emphasize UI clarity, smooth user journeys, and responsive layout.',
+    skills: ['React', 'TypeScript', 'UI/UX', 'Responsive Design'],
+    images: [
+      {
+        src: '/projects/hero.png',
+        alt: 'SPYNEX hero section',
+      },
+      {
+        src: '/projects/product%20page.png',
+        alt: 'SPYNEX product page',
+      },
+      {
+        src: '/projects/checkout.png',
+        alt: 'SPYNEX checkout page',
+      },
+    ],
+  },
+  {
     title: 'DevPath',
     description:
       'A development pathway platform focused on guided, project-based learning with role-based tracks, progress monitoring, and practical milestones for aspiring developers.',
